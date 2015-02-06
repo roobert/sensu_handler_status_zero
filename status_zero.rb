@@ -9,13 +9,13 @@ require 'rubygems' if RUBY_VERSION < '1.9.0'
 require 'sensu-handler'
 require 'redis'
 
-class GreenLight < Sensu::Handler
+class StatusZero < Sensu::Handler
   def handle
     return unless @event['check']['status'] == 0
 
     begin
-      host = settings['greenlight']['server']
-      port = settings['greenlight']['port']
+      host = settings['status_zero']['server']
+      port = settings['status_zero']['port']
     rescue => e
       puts "failed to configure revent handler: #{e}"
     end
