@@ -17,7 +17,7 @@ class StatusZero < Sensu::Handler
       host = settings['status_zero']['server']
       port = settings['status_zero']['port']
     rescue => e
-      puts "failed to configure revent handler: #{e}"
+      puts "failed to configure event handler: #{e}"
     end
 
     begin
